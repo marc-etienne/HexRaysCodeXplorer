@@ -11,3 +11,7 @@
 *.lai
 *.la
 *.a
+
+# Xcode user files
+ida_path.xcconfig
+xcuserdata
