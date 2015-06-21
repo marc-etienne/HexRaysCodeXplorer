@@ -27,6 +27,7 @@
 #include "ida.hpp"
 #include "netnode.hpp"
 #include <kernwin.hpp>
+#include <stdint.h>
 
 #include <windows.h>
 
@@ -50,7 +51,7 @@ struct VTBL_info_t
 	qstring vtbl_name;
 	ea_t ea_begin;
 	ea_t ea_end;
-	UINT methods;
+	uint32_t methods;
 	
 };
 
@@ -59,38 +60,38 @@ extern qvector <qstring> vtbl_list;
 extern qvector <qstring>::iterator vtbl_iter;
 
 
-BOOL get_vtbl_info(ea_t ea_address, VTBL_info_t &vtbl_info);
-inline BOOL is_valid_name(LPCSTR name){ return(*((PDWORD) name) == 0x375F3F3F /*"??_7"*/); }
-void parse_vft_members(LPCTSTR name, ea_t ea_start, ea_t ea_end);
+bool get_vtbl_info(ea_t ea_address, VTBL_info_t &vtbl_info);
+inline bool is_valid_name(char * name){ return(*((uint32_t*) name) == 0x375F3F3F /*"??_7"*/); }
+void parse_vft_members(char * name, ea_t ea_start, ea_t ea_end);
 
 void search_objects(bool bForce = true);
 
 
-template <class T> BOOL verify_32_t(ea_t ea_ptr, T &rvalue)
+template <class T> bool verify_32_t(ea_t ea_ptr, T &rvalue)
 {
 	if(getFlags(ea_ptr))
 	{
 		rvalue = (T) get_32bit(ea_ptr);
-		return(TRUE);
+		return(true);
 	}
 
-	return(FALSE);
+	return(false);
 }
 
 
 // RTTI
 struct RTTI_info_t
 {
-	PVOID vftable;
-	PVOID m_data;
+	void * vftable;
+	void * m_data;
 	char  m_d_name[MAXSTR]; // mangled name (prefix: .?AV=classes, .?AU=structs)
 };
 
-static BOOL is_valid_rtti(RTTI_info_t *pIDA);
-static LPSTR get_name(IN RTTI_info_t *pIDA, OUT LPSTR pszBufer, int iSize);
+static bool is_valid_rtti(RTTI_info_t *pIDA);
+static char ** get_name(RTTI_info_t *pIDA, char ** pszBufer, int iSize);
 
-// returns TRUE if mangled name is a unknown type name		
-static inline BOOL is_type_name(LPCSTR pszName){ return((*((PUINT)pszName) & 0xFFFFFF) == 0x413F2E /*".?A"*/); }
+// returns true if mangled name is a unknown type name
+static inline bool is_type_name(char * pszName){ return((*((uint32_t*)pszName) & 0xFFFFFF) == 0x413F2E /*".?A"*/); }
 
 
 struct PMD
@@ -104,29 +105,29 @@ struct PMD
 struct RTTIBaseClassDescriptor
 {
 	RTTI_info_t *pTypeDescriptor;	// type descriptor of the class
-	UINT numContainedBases;			// number of nested classes
+	uint32_t numContainedBases;			// number of nested classes
 	PMD  pmd;						// pointer-to-member displacement info
-	UINT attributes;				// flags (usually 0)
+	uint32_t attributes;				// flags (usually 0)
 };
 
 
 struct RTTIClassHierarchyDescriptor
 {
-	UINT signature;			// always zero?
-	UINT attributes;		// bit 0 set = multiple inheritance, bit 1 set = virtual inheritance
-	UINT numBaseClasses;	// number of classes in pBaseClassArray
+	uint32_t signature;			// always zero?
+	uint32_t attributes;		// bit 0 set = multiple inheritance, bit 1 set = virtual inheritance
+	uint32_t numBaseClasses;	// number of classes in pBaseClassArray
 	RTTIBaseClassDescriptor **pBaseClassArray;
 };
 
-const UINT CHDF_MULTIPLE = (1 << 0);
-const UINT CHDF_VIRTUAL = (1 << 1);
+const uint32_t CHDF_MULTIPLE = (1 << 0);
+const uint32_t CHDF_VIRTUAL = (1 << 1);
 
 
 struct RTTICompleteObjectLocator
 {
-	UINT signature;					// always zero ?
-	UINT offset;					// offset of this vftable in the complete class
-	UINT cdOffset;					// constructor displacement offset
+	uint32_t signature;					// always zero ?
+	uint32_t offset;					// offset of this vftable in the complete class
+	uint32_t cdOffset;					// constructor displacement offset
 	RTTI_info_t *pTypeDescriptor;	// TypeDescriptor of the complete class
 	RTTIClassHierarchyDescriptor *pClassDescriptor; // 10 Describes inheritance hierarchy
 };
@@ -135,7 +136,7 @@ ea_t find_RTTI(ea_t start_ea, ea_t end_ea);
 char* get_demangle_name(ea_t class_addr);
 void process_rtti();
 
-LPCTSTR get_text_disasm(ea_t ea);
+char * get_text_disasm(ea_t ea);
 
 bool get_vbtbl_by_ea(ea_t vtbl_addr, VTBL_info_t &vtbl);
 

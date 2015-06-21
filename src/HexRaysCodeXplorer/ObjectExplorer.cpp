@@ -39,14 +39,13 @@
 
 #include <string.h>
 #include <stdarg.h>
-#include <tchar.h>
 
 
 //---------------------------------------------------------------------------
 // VTBL code parsing
 //---------------------------------------------------------------------------
 
-LPCTSTR get_text_disasm(ea_t ea)
+char * get_text_disasm(ea_t ea)
 {
 	static char disasm_buff[MAXSTR];
 	disasm_buff[0] = disasm_buff[MAXSTR - 1] = 0;
@@ -58,14 +57,14 @@ LPCTSTR get_text_disasm(ea_t ea)
 }
 
 
-BOOL get_vtbl_info(ea_t ea_address, VTBL_info_t &vtbl_info)
+bool get_vtbl_info(ea_t ea_address, VTBL_info_t &vtbl_info)
 {
 	flags_t flags = getFlags(ea_address);  
 	if(!(hasRef(flags) || has_any_name(flags) && (isDwrd(flags) || isUnknown(flags))))
-		return(FALSE);
+		return(false);
 	else
 	{
-		BOOL is_move_xref = FALSE;
+		bool is_move_xref = false;
 		ea_t ea_code_ref = get_first_dref_to(ea_address);
 		if(ea_code_ref && (ea_code_ref != BADADDR))
 		{
@@ -73,10 +72,10 @@ BOOL get_vtbl_info(ea_t ea_address, VTBL_info_t &vtbl_info)
 			{	
 				if(isCode(getFlags(ea_code_ref)))
 				{
-					LPCTSTR disasm_line = get_text_disasm(ea_code_ref);
-					if((*((PUINT) disasm_line) == 0x20766F6D /*"mov "*/) && (strstr(disasm_line+4, " offset ") != NULL))
+					char * disasm_line = get_text_disasm(ea_code_ref);
+					if((*((uint32_t*) disasm_line) == 0x20766F6D /*"mov "*/) && (strstr(disasm_line+4, " offset ") != NULL))
 					{
-						is_move_xref = TRUE;
+						is_move_xref = true;
 						break;
 					}
 				}			
@@ -86,7 +85,7 @@ BOOL get_vtbl_info(ea_t ea_address, VTBL_info_t &vtbl_info)
 			} while(ea_code_ref && (ea_code_ref != BADADDR));		
 		}
 		if(!is_move_xref)
-			return(FALSE);
+			return(false);
 
 		ZeroMemory(&vtbl_info, sizeof(VTBL_info_t));
 
@@ -94,7 +93,7 @@ BOOL get_vtbl_info(ea_t ea_address, VTBL_info_t &vtbl_info)
 		get_ea_name(&vtbl_info.vtbl_name, ea_address);
 
 		ea_t ea_start = vtbl_info.ea_begin = ea_address;
-		while(TRUE)
+		while(true)
 		{
 			flags_t index_flags = getFlags(ea_address);
 			if(!(hasValue(index_flags) && (isDwrd(index_flags) || isUnknown(index_flags))))
@@ -116,20 +115,20 @@ BOOL get_vtbl_info(ea_t ea_address, VTBL_info_t &vtbl_info)
 			else
 				if(isUnknown(index_flags))
 				{						
-					doDwrd(ea_address, sizeof(DWORD));			
+					doDwrd(ea_address, sizeof(uint32_t));
 				}
 
-				ea_address += sizeof(UINT);
+				ea_address += sizeof(uint32_t);
 		};
 
-		if((vtbl_info.methods = ((ea_address - ea_start) / sizeof(UINT))) > 0)
+		if((vtbl_info.methods = ((ea_address - ea_start) / sizeof(uint32_t))) > 0)
 		{
 			vtbl_info.ea_end = ea_address;	
-			return(TRUE);
+			return(true);
 		}
 		else
 		{
-			return(FALSE);
+			return(false);
 		}
 	}
 }
@@ -138,7 +137,7 @@ BOOL get_vtbl_info(ea_t ea_address, VTBL_info_t &vtbl_info)
 
 qvector <VTBL_info_t> vtbl_t_list;
 qvector <qstring> vtbl_list; // list of vtables for ObjectExplrer view
-static BOOL process_vtbl(ea_t &ea_sect)
+static bool process_vtbl(ea_t &ea_sect)
 {
 	VTBL_info_t vftable_info_t;
 	if(get_vtbl_info(ea_sect, vftable_info_t))
@@ -159,15 +158,15 @@ static BOOL process_vtbl(ea_t &ea_sect)
 
 				vtbl_t_list.push_back(vftable_info_t);
 
-				return(TRUE);
+				return(true);
 			}
 		}
 
-		return(FALSE);
+		return(false);
 	}
 
-	ea_sect += sizeof(UINT);	
-	return(FALSE);
+	ea_sect += sizeof(uint32_t);
+	return(false);
 }
 
 bool get_vbtbl_by_ea(ea_t vtbl_addr, VTBL_info_t &vtbl) {
@@ -274,7 +273,7 @@ qvector <ea_t> rtti_addr;
 void process_rtti()
 {
 	ea_t start = getnseg(0)->startEA;
-	while (TRUE)
+	while (true)
 	{
 		ea_t rt = find_RTTI(start, inf.maxEA);
 		start = rt + 4;
