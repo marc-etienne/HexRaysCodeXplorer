@@ -29,9 +29,6 @@
 #include <kernwin.hpp>
 #include <stdint.h>
 
-#include <windows.h>
-
-
 // Object Explorer From Init
 struct object_explorer_info_t
 {

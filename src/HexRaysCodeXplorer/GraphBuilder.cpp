@@ -27,7 +27,6 @@
 #include "GraphBuilder.h"
 #include "ObjectExplorer.h"
 
-#include <windows.h>
 #include <list>
 #include <map>
 
