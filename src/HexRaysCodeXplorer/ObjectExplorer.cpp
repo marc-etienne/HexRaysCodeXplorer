@@ -401,7 +401,7 @@ static void get_xrefs_to_vtbl()
 		xref_addr.push_back(addr);
 
 		qstring tmp;
-		tmp.cat_sprnt(" 0x%x:  %s", addr, name);
+		tmp.cat_sprnt(" 0x%x:  %s", addr, name.c_str());
 		xref_list.push_back(tmp);
 	}
 }
