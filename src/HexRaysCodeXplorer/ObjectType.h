@@ -24,14 +24,13 @@
 
 #pragma once
 
-#include <Windows.h>
-#include <tchar.h>
 #include <iterator>
 #include <string>
 #include <vector>
 #include <list>
 #include <map>
 #include <iostream>
+#include "Common.h"
 
 
 using namespace std;

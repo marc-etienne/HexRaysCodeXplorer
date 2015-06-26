@@ -24,10 +24,10 @@
 */
 
 
+#include "ObjectType.h"
 #include "Common.h"
 #include "GraphBuilder.h"
 #include "ObjectExplorer.h"
-#include "ObjectType.h"
 
 
 // Hex-Rays API pointer
