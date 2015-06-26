@@ -29,6 +29,7 @@
 		A716119B1B348E5100F37101 /* ObjectType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectType.h; sourceTree = SOURCE_ROOT; };
 		A71611A81B34C45500F37101 /* ida_path.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ida_path.xcconfig; sourceTree = SOURCE_ROOT; };
 		A71611A91B35E78900F37101 /* generate_ida_path_xcconfig.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = generate_ida_path_xcconfig.sh; sourceTree = SOURCE_ROOT; };
+		A71611AD1B3B724700F37101 /* HexRaysCodeXplorer.exp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.exports; path = HexRaysCodeXplorer.exp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +47,7 @@
 			isa = PBXGroup;
 			children = (
 				A71611861B345EA300F37101 /* HexRaysCodeXplorer */,
-				A71611AA1B35F94700F37101 /* Build */,
+				A71611AA1B35F94700F37101 /* Supporting files */,
 				A71611851B345EA300F37101 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,13 +75,14 @@
 			path = HexRaysCodeXplorer;
 			sourceTree = "<group>";
 		};
-		A71611AA1B35F94700F37101 /* Build */ = {
+		A71611AA1B35F94700F37101 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
 				A71611A91B35E78900F37101 /* generate_ida_path_xcconfig.sh */,
 				A71611A81B34C45500F37101 /* ida_path.xcconfig */,
+				A71611AD1B3B724700F37101 /* HexRaysCodeXplorer.exp */,
 			);
-			name = Build;
+			name = "Supporting files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,6 +270,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_EXTENSION = pmc;
 				EXECUTABLE_PREFIX = "";
+				EXPORTED_SYMBOLS_FILE = "$(SRCROOT)/HexRaysCodeXplorer.exp";
 				GCC_ENABLE_CPP_EXCEPTIONS = YES;
 				GCC_ENABLE_CPP_RTTI = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -279,15 +282,19 @@
 					"$(inherited)",
 					"__X64__=1",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(IDA_SDK)/include",
 					"$(IDA_APP_PATH)/Contents/MacOS/plugins/hexrays_sdk/include",
 				);
-				LIBRARY_SEARCH_PATHS = "$(IDA_SDK)/lib";
+				LIBRARY_SEARCH_PATHS = (
+					"$(IDA_SDK)/lib",
+					"$(IDA_APP_PATH)/Contents/MacOS",
+				);
 				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CFLAGS)";
+				OTHER_LDFLAGS = "-lida";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				__MAC__ = 1;
 			};
@@ -301,6 +308,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_EXTENSION = pmc;
 				EXECUTABLE_PREFIX = "";
+				EXPORTED_SYMBOLS_FILE = "$(SRCROOT)/HexRaysCodeXplorer.exp";
 				GCC_ENABLE_CPP_EXCEPTIONS = YES;
 				GCC_ENABLE_CPP_RTTI = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = "__MAC__=1";
@@ -308,15 +316,19 @@
 					"$(inherited)",
 					"__X64__=1",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(IDA_SDK)/include",
 					"$(IDA_APP_PATH)/Contents/MacOS/plugins/hexrays_sdk/include",
 				);
-				LIBRARY_SEARCH_PATHS = "$(IDA_SDK)/lib";
+				LIBRARY_SEARCH_PATHS = (
+					"$(IDA_SDK)/lib",
+					"$(IDA_APP_PATH)/Contents/MacOS",
+				);
 				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CFLAGS)";
+				OTHER_LDFLAGS = "-lida";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				__MAC__ = 1;
 			};
