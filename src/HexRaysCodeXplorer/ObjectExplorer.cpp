@@ -87,7 +87,7 @@ bool get_vtbl_info(ea_t ea_address, VTBL_info_t &vtbl_info)
 		if(!is_move_xref)
 			return(false);
 
-		ZeroMemory(&vtbl_info, sizeof(VTBL_info_t));
+		memset(&vtbl_info, 0, sizeof(VTBL_info_t));
 
 		//get_name(BADADDR, ea_address, vtbl_info.vtbl_name, (MAXSTR - 1));
 		get_ea_name(&vtbl_info.vtbl_name, ea_address);
@@ -510,7 +510,7 @@ static char* get_vtbl_hint(int line_num)
 {
 	current_line_pos = line_num;
 	char tag_lines [4096];
-	ZeroMemory(tag_lines, sizeof(tag_lines));
+	memset(tag_lines, 0, sizeof(tag_lines));
 	
 	if (isEnabled(vtbl_t_list[line_num].ea_begin))
 	{
@@ -528,7 +528,7 @@ static char* get_vtbl_hint(int line_num)
 			char buf[MAXSTR];
 			char *line = ln.down();           
 			tag_remove(line, buf, sizeof(buf));
-			used += sprintf_s(tag_lines + used, sizeof(tag_lines) - used, "%s\n", buf);
+			used += qsnprintf(tag_lines + used, sizeof(tag_lines) - used, "%s\n", buf);
 		}
 
 	}

@@ -359,7 +359,7 @@ bool idaapi type_builder_t::check_ptr(cexpr_t *e, struct_filed &str_fld)
 
 					char comment[258];
 					memset(comment, 0x00, sizeof(comment));
-					sprintf_s(comment, sizeof(comment), "monitoring %s\r\n", expr_name);
+					qsnprintf(comment, sizeof(comment), "monitoring %s\r\n", expr_name);
 
 					msg(comment);
 
@@ -386,7 +386,7 @@ bool idaapi type_builder_t::check_ptr(cexpr_t *e, struct_filed &str_fld)
 		if (str_fld.vftbl != BADADDR) {
 			char tmp[1024];
 			memset(tmp, 0x00, sizeof(tmp));
-			sprintf_s(tmp, sizeof(tmp), "possible vftbl reference detected at offset 0x%X, ea=0x%08X\r\n", str_fld.offset, str_fld.vftbl);
+			qsnprintf(tmp, sizeof(tmp), "possible vftbl reference detected at offset 0x%X, ea=0x%08X\r\n", str_fld.offset, str_fld.vftbl);
 
 			msg(tmp);
 		}
@@ -525,7 +525,7 @@ tid_t type_builder_t::get_structure(char * name)
 
 					tid_t vtbl_str_id = create_vtbl_struct(vtbl.ea_begin, vtbl.ea_end, (char *)vftbl_name.c_str(), 0);
 					if (vtbl_str_id != BADADDR) {
-						sprintf_s(field_name, sizeof(field_name), "vftbl_%d", j);
+						qsnprintf(field_name, sizeof(field_name), "vftbl_%d", j);
 						int iRet = add_struc_member(struc, field_name, i->second.offset, member_flgs, NULL, i->second.size);
 
 						member_t * membr = get_member_by_name(struc, field_name);
@@ -537,7 +537,7 @@ tid_t type_builder_t::get_structure(char * name)
 						}
 					}	
 				} else {
-					sprintf_s(field_name, sizeof(field_name), "field_%d", j);
+					qsnprintf(field_name, sizeof(field_name), "field_%d", j);
 					int iRet = add_struc_member(struc, field_name, i->second.offset, member_flgs, NULL, i->second.size);
 				}
 
