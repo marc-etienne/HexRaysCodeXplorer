@@ -11,8 +11,6 @@
 		A716119D1B348E5100F37101 /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = A71611931B348E5100F37101 /* Common.h */; };
 		A716119E1B348E5100F37101 /* GraphBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A71611941B348E5100F37101 /* GraphBuilder.cpp */; };
 		A716119F1B348E5100F37101 /* GraphBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = A71611951B348E5100F37101 /* GraphBuilder.h */; };
-		A71611A01B348E5100F37101 /* HexRaysCodeXplorer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A71611961B348E5100F37101 /* HexRaysCodeXplorer.cpp */; };
-		A71611A11B348E5100F37101 /* HexRaysCodeXplorer.h in Headers */ = {isa = PBXBuildFile; fileRef = A71611971B348E5100F37101 /* HexRaysCodeXplorer.h */; };
 		A71611A21B348E5100F37101 /* ObjectExplorer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A71611981B348E5100F37101 /* ObjectExplorer.cpp */; };
 		A71611A31B348E5100F37101 /* ObjectExplorer.h in Headers */ = {isa = PBXBuildFile; fileRef = A71611991B348E5100F37101 /* ObjectExplorer.h */; };
 		A71611A41B348E5100F37101 /* ObjectType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A716119A1B348E5100F37101 /* ObjectType.cpp */; };
@@ -25,8 +23,6 @@
 		A71611931B348E5100F37101 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = SOURCE_ROOT; };
 		A71611941B348E5100F37101 /* GraphBuilder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GraphBuilder.cpp; sourceTree = SOURCE_ROOT; };
 		A71611951B348E5100F37101 /* GraphBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphBuilder.h; sourceTree = SOURCE_ROOT; };
-		A71611961B348E5100F37101 /* HexRaysCodeXplorer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HexRaysCodeXplorer.cpp; sourceTree = SOURCE_ROOT; };
-		A71611971B348E5100F37101 /* HexRaysCodeXplorer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HexRaysCodeXplorer.h; sourceTree = SOURCE_ROOT; };
 		A71611981B348E5100F37101 /* ObjectExplorer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ObjectExplorer.cpp; sourceTree = SOURCE_ROOT; };
 		A71611991B348E5100F37101 /* ObjectExplorer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectExplorer.h; sourceTree = SOURCE_ROOT; };
 		A716119A1B348E5100F37101 /* ObjectType.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ObjectType.cpp; sourceTree = SOURCE_ROOT; };
@@ -70,8 +66,6 @@
 				A71611931B348E5100F37101 /* Common.h */,
 				A71611941B348E5100F37101 /* GraphBuilder.cpp */,
 				A71611951B348E5100F37101 /* GraphBuilder.h */,
-				A71611961B348E5100F37101 /* HexRaysCodeXplorer.cpp */,
-				A71611971B348E5100F37101 /* HexRaysCodeXplorer.h */,
 				A71611981B348E5100F37101 /* ObjectExplorer.cpp */,
 				A71611991B348E5100F37101 /* ObjectExplorer.h */,
 				A716119A1B348E5100F37101 /* ObjectType.cpp */,
@@ -97,7 +91,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A716119D1B348E5100F37101 /* Common.h in Headers */,
-				A71611A11B348E5100F37101 /* HexRaysCodeXplorer.h in Headers */,
 				A71611A31B348E5100F37101 /* ObjectExplorer.h in Headers */,
 				A71611A51B348E5100F37101 /* ObjectType.h in Headers */,
 				A716119F1B348E5100F37101 /* GraphBuilder.h in Headers */,
@@ -181,7 +174,6 @@
 				A71611A41B348E5100F37101 /* ObjectType.cpp in Sources */,
 				A716119E1B348E5100F37101 /* GraphBuilder.cpp in Sources */,
 				A716119C1B348E5100F37101 /* CodeXplorer.cpp in Sources */,
-				A71611A01B348E5100F37101 /* HexRaysCodeXplorer.cpp in Sources */,
 				A71611A21B348E5100F37101 /* ObjectExplorer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
