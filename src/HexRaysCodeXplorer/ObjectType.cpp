@@ -81,11 +81,8 @@ int idaapi type_reference::get_type_increment_val() {
 		if(type.get_ptr_details(&ptr_deets)) {
 			return ptr_deets.obj_type.get_size();
 		}
-	} else if (type.is_array()) {
-		return 1;
-	} else {
-		return 1;
 	}
+    return 1;
 }
 
 int idaapi type_reference::update_offset(int offset) {
