@@ -35,6 +35,8 @@ hexdsp_t *hexdsp = NULL;
 
 static bool inited = false;
 
+extern plugin_t PLUGIN;
+
 // Hotkey for the new command
 static const char hotkey_dg[] = "T";
 static ushort hotcode_dg;
