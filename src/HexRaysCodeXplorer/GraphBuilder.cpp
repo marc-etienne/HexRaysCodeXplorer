@@ -104,7 +104,7 @@ char * callgraph_t::get_node_label(int n, char *buf, int bufsize) const
 			break;
 		case cit_asm:
 			// Display instruction block address and size for asm-statements
-			ptr += qsnprintf(ptr, endp - ptr, " %a.%"FMT_Z, *i->casm->begin(), i->casm->size());
+			ptr += qsnprintf(ptr, endp - ptr, " %a.%" FMT_Z, *i->casm->begin(), i->casm->size());
 			break;
 		default:
 			break;
