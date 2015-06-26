@@ -35,16 +35,4 @@
 
 using namespace std;
 
-typedef std::basic_string<TCHAR>	TSTRING;
-typedef std::basic_string<WCHAR>	WSTRING;
-typedef std::basic_string<CHAR>		ASTRING;
-typedef std::vector<UCHAR>			BUFFER;
-
-#ifdef _UNICODE
-#define tcout						std::wcout
-#else
-#define tcout						std::cout
-#endif
-
-
 bool idaapi reconstruct_type(void *ud);
