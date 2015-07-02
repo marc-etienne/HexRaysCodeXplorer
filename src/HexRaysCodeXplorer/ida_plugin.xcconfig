@@ -1,0 +1,24 @@
+// Xcode settings to ease the compilation of IDA plugin on Xcode
+//
+//  Created by Marc-Etienne M.Léveillé on 2015-06-20.
+//  Copyright (c) 2015 Marc-Etienne M.Léveillé
+
+#include "ida_path.xcconfig"
+
+// idaq and idaq64 are 32-bit only binaries, no point in building
+// 64-bit version of plugins
+ARCHS = $(ARCHS_STANDARD_32_BIT)
+
+EXECUTABLE_EXTENSION = pmc
+EXECUTABLE_PREFIX = 
+
+EXPORTED_SYMBOLS_FILE = $(SRCROOT)/ida_plugin.exp
+GCC_SYMBOLS_PRIVATE_EXTERN = NO
+
+HEADER_SEARCH_PATHS = $(inherited) $(IDA_SDK)/include $(IDA_APP_PATH)/Contents/MacOS/plugins/hexrays_sdk/include
+
+LIBRARY_SEARCH_PATHS = $(IDA_APP_PATH)/Contents/MacOS
+OTHER_LDFLAGS = -lida
+
+// IDA SDK headers need this defined to know we're building for OS X
+GCC_PREPROCESSOR_DEFINITIONS = __MAC__=1
