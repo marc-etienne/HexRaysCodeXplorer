@@ -20,4 +20,4 @@ fi
 (
     echo IDA_APP_PATH=\""$IDA_APP_PATH"\"
     echo IDA_SDK=\""$IDA_SDK"\"
-) > "$SRCROOT/ida_path.xcconfig"
+) > "$SRCROOT/osx_build/ida_path.xcconfig"

@@ -18,17 +18,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A70BA7DE1B4735CC00AA6280 /* generate_ida_path_xcconfig.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = generate_ida_path_xcconfig.sh; sourceTree = "<group>"; };
+		A70BA7DF1B4735CC00AA6280 /* ida_path.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ida_path.xcconfig; sourceTree = "<group>"; };
 		A71611841B345EA300F37101 /* HexRaysCodeXplorer.pmc */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = HexRaysCodeXplorer.pmc; sourceTree = BUILT_PRODUCTS_DIR; };
-		A71611921B348E5100F37101 /* CodeXplorer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CodeXplorer.cpp; sourceTree = SOURCE_ROOT; };
-		A71611931B348E5100F37101 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = SOURCE_ROOT; };
-		A71611941B348E5100F37101 /* GraphBuilder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GraphBuilder.cpp; sourceTree = SOURCE_ROOT; };
-		A71611951B348E5100F37101 /* GraphBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphBuilder.h; sourceTree = SOURCE_ROOT; };
-		A71611981B348E5100F37101 /* ObjectExplorer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ObjectExplorer.cpp; sourceTree = SOURCE_ROOT; };
-		A71611991B348E5100F37101 /* ObjectExplorer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectExplorer.h; sourceTree = SOURCE_ROOT; };
-		A716119A1B348E5100F37101 /* ObjectType.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ObjectType.cpp; sourceTree = SOURCE_ROOT; };
-		A716119B1B348E5100F37101 /* ObjectType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectType.h; sourceTree = SOURCE_ROOT; };
-		A71611A81B34C45500F37101 /* ida_path.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ida_path.xcconfig; sourceTree = SOURCE_ROOT; };
-		A71611A91B35E78900F37101 /* generate_ida_path_xcconfig.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = generate_ida_path_xcconfig.sh; sourceTree = SOURCE_ROOT; };
+		A71611921B348E5100F37101 /* CodeXplorer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CodeXplorer.cpp; sourceTree = "<group>"; };
+		A71611931B348E5100F37101 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		A71611941B348E5100F37101 /* GraphBuilder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GraphBuilder.cpp; sourceTree = "<group>"; };
+		A71611951B348E5100F37101 /* GraphBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphBuilder.h; sourceTree = "<group>"; };
+		A71611981B348E5100F37101 /* ObjectExplorer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ObjectExplorer.cpp; sourceTree = "<group>"; };
+		A71611991B348E5100F37101 /* ObjectExplorer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectExplorer.h; sourceTree = "<group>"; };
+		A716119A1B348E5100F37101 /* ObjectType.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ObjectType.cpp; sourceTree = "<group>"; };
+		A716119B1B348E5100F37101 /* ObjectType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectType.h; sourceTree = "<group>"; };
 		A71611AD1B3B724700F37101 /* ida_plugin.exp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.exports; path = ida_plugin.exp; sourceTree = "<group>"; };
 		A71611AF1B3DF87200F37101 /* ida_plugin.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ida_plugin.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,12 +79,13 @@
 		A71611AA1B35F94700F37101 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
-				A71611A91B35E78900F37101 /* generate_ida_path_xcconfig.sh */,
+				A70BA7DE1B4735CC00AA6280 /* generate_ida_path_xcconfig.sh */,
+				A70BA7DF1B4735CC00AA6280 /* ida_path.xcconfig */,
 				A71611AF1B3DF87200F37101 /* ida_plugin.xcconfig */,
-				A71611A81B34C45500F37101 /* ida_path.xcconfig */,
 				A71611AD1B3B724700F37101 /* ida_plugin.exp */,
 			);
 			name = "Supporting files";
+			path = osx_build;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,7 +166,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "source \"$SRCROOT/generate_ida_path_xcconfig.sh\"";
+			shellScript = "source \"$SRCROOT/osx_build/generate_ida_path_xcconfig.sh\"";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
