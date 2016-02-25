@@ -15,3 +15,7 @@
 # Xcode user files
 ida_path.xcconfig
 xcuserdata
+*.xccheckout
+
+# OS X build path
+/src/build
