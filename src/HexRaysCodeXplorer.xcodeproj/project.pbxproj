@@ -6,6 +6,21 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		A71DBA641B58583600C869BE /* HexRaysCodeXplorer */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = A71DBA651B58583600C869BE /* Build configuration list for PBXAggregateTarget "HexRaysCodeXplorer" */;
+			buildPhases = (
+			);
+			dependencies = (
+				A71DBA691B58584300C869BE /* PBXTargetDependency */,
+				A71DBA6B1B58584300C869BE /* PBXTargetDependency */,
+			);
+			name = HexRaysCodeXplorer;
+			productName = HexRaysCodeXplorer;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		A716119C1B348E5100F37101 /* CodeXplorer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A71611921B348E5100F37101 /* CodeXplorer.cpp */; };
 		A716119D1B348E5100F37101 /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = A71611931B348E5100F37101 /* Common.h */; };
@@ -15,7 +30,32 @@
 		A71611A31B348E5100F37101 /* ObjectExplorer.h in Headers */ = {isa = PBXBuildFile; fileRef = A71611991B348E5100F37101 /* ObjectExplorer.h */; };
 		A71611A41B348E5100F37101 /* ObjectType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A716119A1B348E5100F37101 /* ObjectType.cpp */; };
 		A71611A51B348E5100F37101 /* ObjectType.h in Headers */ = {isa = PBXBuildFile; fileRef = A716119B1B348E5100F37101 /* ObjectType.h */; };
+		A71DBA561B58539200C869BE /* ObjectType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A716119A1B348E5100F37101 /* ObjectType.cpp */; };
+		A71DBA571B58539200C869BE /* GraphBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A71611941B348E5100F37101 /* GraphBuilder.cpp */; };
+		A71DBA581B58539200C869BE /* CodeXplorer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A71611921B348E5100F37101 /* CodeXplorer.cpp */; };
+		A71DBA591B58539200C869BE /* ObjectExplorer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A71611981B348E5100F37101 /* ObjectExplorer.cpp */; };
+		A71DBA5C1B58539200C869BE /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = A71611931B348E5100F37101 /* Common.h */; };
+		A71DBA5D1B58539200C869BE /* ObjectExplorer.h in Headers */ = {isa = PBXBuildFile; fileRef = A71611991B348E5100F37101 /* ObjectExplorer.h */; };
+		A71DBA5E1B58539200C869BE /* ObjectType.h in Headers */ = {isa = PBXBuildFile; fileRef = A716119B1B348E5100F37101 /* ObjectType.h */; };
+		A71DBA5F1B58539200C869BE /* GraphBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = A71611951B348E5100F37101 /* GraphBuilder.h */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A71DBA681B58584300C869BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A716117C1B345EA200F37101 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A71611831B345EA300F37101;
+			remoteInfo = "HexRaysCodeXplorer idaq";
+		};
+		A71DBA6A1B58584300C869BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A716117C1B345EA200F37101 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A71DBA531B58539200C869BE;
+			remoteInfo = "HexRaysCodeXplorer idaq64";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		A70BA7DE1B4735CC00AA6280 /* generate_ida_path_xcconfig.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = generate_ida_path_xcconfig.sh; sourceTree = "<group>"; };
@@ -31,10 +71,19 @@
 		A716119B1B348E5100F37101 /* ObjectType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectType.h; sourceTree = "<group>"; };
 		A71611AD1B3B724700F37101 /* ida_plugin.exp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.exports; path = ida_plugin.exp; sourceTree = "<group>"; };
 		A71611AF1B3DF87200F37101 /* ida_plugin.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ida_plugin.xcconfig; sourceTree = "<group>"; };
+		A71DBA521B5851A500C869BE /* ida_plugin_64.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ida_plugin_64.xcconfig; sourceTree = "<group>"; };
+		A71DBA631B58539200C869BE /* HexRaysCodeXplorer.pmc64 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = HexRaysCodeXplorer.pmc64; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		A71611811B345EA300F37101 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A71DBA5A1B58539200C869BE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -57,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				A71611841B345EA300F37101 /* HexRaysCodeXplorer.pmc */,
+				A71DBA631B58539200C869BE /* HexRaysCodeXplorer.pmc64 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -82,6 +132,7 @@
 				A70BA7DE1B4735CC00AA6280 /* generate_ida_path_xcconfig.sh */,
 				A70BA7DF1B4735CC00AA6280 /* ida_path.xcconfig */,
 				A71611AF1B3DF87200F37101 /* ida_plugin.xcconfig */,
+				A71DBA521B5851A500C869BE /* ida_plugin_64.xcconfig */,
 				A71611AD1B3B724700F37101 /* ida_plugin.exp */,
 			);
 			name = "Supporting files";
@@ -102,12 +153,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A71DBA5B1B58539200C869BE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A71DBA5C1B58539200C869BE /* Common.h in Headers */,
+				A71DBA5D1B58539200C869BE /* ObjectExplorer.h in Headers */,
+				A71DBA5E1B58539200C869BE /* ObjectType.h in Headers */,
+				A71DBA5F1B58539200C869BE /* GraphBuilder.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		A71611831B345EA300F37101 /* HexRaysCodeXplorer */ = {
+		A71611831B345EA300F37101 /* HexRaysCodeXplorer idaq */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A716118F1B345EA300F37101 /* Build configuration list for PBXNativeTarget "HexRaysCodeXplorer" */;
+			buildConfigurationList = A716118F1B345EA300F37101 /* Build configuration list for PBXNativeTarget "HexRaysCodeXplorer idaq" */;
 			buildPhases = (
 				A71611A71B34B77D00F37101 /* ShellScript */,
 				A71611801B345EA300F37101 /* Sources */,
@@ -118,9 +180,27 @@
 			);
 			dependencies = (
 			);
-			name = HexRaysCodeXplorer;
+			name = "HexRaysCodeXplorer idaq";
 			productName = HexRaysCodeXplorer;
 			productReference = A71611841B345EA300F37101 /* HexRaysCodeXplorer.pmc */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		A71DBA531B58539200C869BE /* HexRaysCodeXplorer idaq64 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A71DBA601B58539200C869BE /* Build configuration list for PBXNativeTarget "HexRaysCodeXplorer idaq64" */;
+			buildPhases = (
+				A71DBA541B58539200C869BE /* ShellScript */,
+				A71DBA551B58539200C869BE /* Sources */,
+				A71DBA5A1B58539200C869BE /* Frameworks */,
+				A71DBA5B1B58539200C869BE /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "HexRaysCodeXplorer idaq64";
+			productName = HexRaysCodeXplorer;
+			productReference = A71DBA631B58539200C869BE /* HexRaysCodeXplorer.pmc64 */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
 /* End PBXNativeTarget section */
@@ -134,6 +214,9 @@
 				TargetAttributes = {
 					A71611831B345EA300F37101 = {
 						CreatedOnToolsVersion = 6.3.2;
+					};
+					A71DBA641B58583600C869BE = {
+						CreatedOnToolsVersion = 6.4;
 					};
 				};
 			};
@@ -149,13 +232,29 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A71611831B345EA300F37101 /* HexRaysCodeXplorer */,
+				A71DBA641B58583600C869BE /* HexRaysCodeXplorer */,
+				A71611831B345EA300F37101 /* HexRaysCodeXplorer idaq */,
+				A71DBA531B58539200C869BE /* HexRaysCodeXplorer idaq64 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		A71611A71B34B77D00F37101 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "source \"$SRCROOT/osx_build/generate_ida_path_xcconfig.sh\"";
+			showEnvVarsInLog = 0;
+		};
+		A71DBA541B58539200C869BE /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -183,7 +282,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A71DBA551B58539200C869BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A71DBA561B58539200C869BE /* ObjectType.cpp in Sources */,
+				A71DBA571B58539200C869BE /* GraphBuilder.cpp in Sources */,
+				A71DBA581B58539200C869BE /* CodeXplorer.cpp in Sources */,
+				A71DBA591B58539200C869BE /* ObjectExplorer.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A71DBA691B58584300C869BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A71611831B345EA300F37101 /* HexRaysCodeXplorer idaq */;
+			targetProxy = A71DBA681B58584300C869BE /* PBXContainerItemProxy */;
+		};
+		A71DBA6B1B58584300C869BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A71DBA531B58539200C869BE /* HexRaysCodeXplorer idaq64 */;
+			targetProxy = A71DBA6A1B58584300C869BE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		A716118D1B345EA300F37101 /* Debug */ = {
@@ -245,8 +368,9 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
+				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEPLOYMENT_POSTPROCESSING = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -259,17 +383,48 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SEPARATE_STRIP = YES;
 			};
 			name = Release;
 		};
 		A71611901B345EA300F37101 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = HexRaysCodeXplorer;
 			};
 			name = Debug;
 		};
 		A71611911B345EA300F37101 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = HexRaysCodeXplorer;
+			};
+			name = Release;
+		};
+		A71DBA611B58539200C869BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A71DBA521B5851A500C869BE /* ida_plugin_64.xcconfig */;
+			buildSettings = {
+				PRODUCT_NAME = HexRaysCodeXplorer;
+			};
+			name = Debug;
+		};
+		A71DBA621B58539200C869BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A71DBA521B5851A500C869BE /* ida_plugin_64.xcconfig */;
+			buildSettings = {
+				PRODUCT_NAME = HexRaysCodeXplorer;
+			};
+			name = Release;
+		};
+		A71DBA661B58583600C869BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A71DBA671B58583600C869BE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -288,7 +443,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A716118F1B345EA300F37101 /* Build configuration list for PBXNativeTarget "HexRaysCodeXplorer" */ = {
+		A716118F1B345EA300F37101 /* Build configuration list for PBXNativeTarget "HexRaysCodeXplorer idaq" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A71611901B345EA300F37101 /* Debug */,
@@ -296,6 +451,23 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		A71DBA601B58539200C869BE /* Build configuration list for PBXNativeTarget "HexRaysCodeXplorer idaq64" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A71DBA611B58539200C869BE /* Debug */,
+				A71DBA621B58539200C869BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A71DBA651B58583600C869BE /* Build configuration list for PBXAggregateTarget "HexRaysCodeXplorer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A71DBA661B58583600C869BE /* Debug */,
+				A71DBA671B58583600C869BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

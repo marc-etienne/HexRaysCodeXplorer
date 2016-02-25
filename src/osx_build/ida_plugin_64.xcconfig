@@ -1,0 +1,13 @@
+//
+//  ida_plugin_64.xcconfig
+//  HexRaysCodeXplorer
+//
+//  Created by Marc-Etienne M.Léveillé on 2015-07-16.
+//  Copyright (c) 2015 REhints. All rights reserved.
+//
+
+#include "ida_plugin.xcconfig"
+
+EXECUTABLE_EXTENSION = pmc64
+
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) __EA64__=1
